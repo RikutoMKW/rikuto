@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #393e4f, #393f4c);
+      font-family: 'Montserrat', sans-serif;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+button {
+  background-color: #6495ed;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #4682b4;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding: 20px;
+}
+
+/* 時計のスタイル */
+#clock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="button-container">
+    <button onclick="location.href='https://www.youtube.com/@RiivolutionCTGP/'">Youtube</button>
+    <button onclick="location.href='https://twitter.com/RiivolutionCTGP'">Twitter</button>
+  </div>
+  <!-- 時計のHTML -->
+  <div id="clock"></div>
+  <script>
+    // 時計の表示を更新する関数
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+    // 1秒ごとに時計の表示を更新する
+    setInterval(updateClock, 1000);
+  </script>
+<title>RainKartWii</title>
+</body>
+</html>
